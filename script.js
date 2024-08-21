@@ -211,7 +211,23 @@ function downloadproject() {
 		a.click();
 	})
 }
-
+async function upload(){
+//    var tex=await new Response(document.querySelector("#uploadfile").files[0]).text();
+//    alert(tex)
+    var upld = document.querySelector("#uploadfile").files[0]
+    var zip = new JSZip();
+    zip.loadAsync(upld).then(function(zi) {
+        try{
+        Object.keys(zi.files).forEach(function (filename){
+            zi.files[filename].async("string").then(function (data) {
+                files.push([filename,data])
+                updateFiles()
+            });
+        });
+        
+        }catch(e){alert(e)}
+    });
+}
 window.files = [
 	["index.html", `<!DOCTYPE html>
 <html>
