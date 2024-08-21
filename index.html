@@ -1,3 +1,5 @@
+
+
 <body style="margin:0;overflow:hidden;">
 	<script>
 		module = {};
@@ -6,7 +8,7 @@
 	<script src="ext-language_tools.js"></script>
 	<div id="action">
 		<div id="actionfile">
-			<div id="upload" onclick="upload()" title="Upload" class="btn">^</div>
+			<div id="upload" title="Upload (Adds to current files)" class="btn"><input id="uploadfile" type="file" style="opacity:0;width:100%,height:100%" onchange="upload()"><label for="uploadfile">^</label></div>
 			<div id="download" onclick="download()" title="Download File" class="btn">v</div>
 			<div id="downloadproject" onclick="downloadproject()" title="Download Project" class="btn">vv</div>
 			<div id="delete" onclick="del()" title="Delete Selected File" class="btn">-</div>
